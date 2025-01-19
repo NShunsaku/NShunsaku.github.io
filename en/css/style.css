@@ -1,34 +1,96 @@
 @charset "utf-8";
 
+/* ----- Global Reset & Base Styles ----- */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  font-family: arial, sans-serif;
+}
+
 .noline {
   text-decoration: none;
   color: white;
 }
 
+.box img {
+  border-radius: 30px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.bg {
+  color: white;
+  clear: both;
+}
+
+/* ----- figure2 & h7 ----- */
+figure2 {
+  float: center;
+  margin: 0% 0% 100% 0%;
+  width: 100%;
+}
+
+h7 {
+  float: center;
+  font-size: 18px;
+  line-height: 22px;
+  border-color: #e6e6e6;
+}
+
+/* ----- h6 ----- */
 h6 {
   padding-bottom: 7px;
   font-size: 18px;
   font-weight: 400;
   border-width: 0 0 1px 0;
   line-height: 20px;
-  margin-left: 0px;
-  /* border-style: solid; */
+  margin-left: 0;
   border-color: #e6e6e6;
 }
 
-
-
-
-a:hover {
-  text-decoration: underline;
+/* ----- Tabs & Content Area (common) ----- */
+.tab-area {
+  display: flex;
+  justify-content: space-around;
+  background-color: #222e3e;
+  cursor: pointer;
 }
 
-@media screen and (min-width: 479px) {
-  * {
-    margin: 0;
-    padding: 0;
-  }
+.tab-area .tab {
+  font-size: 14pt;
+  width: 300px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  border-right: 1px solid #50637b;
+  border-left: 1px solid #222e3e;
+}
 
+.tab-area .tab.active {
+  background-color: #ccc;
+  color: #222e3e;
+  border: none;
+}
+
+.content-area .content {
+  display: none;
+}
+
+/* Shown content differs in margin-top for each breakpoint */
+.content-area .content.show {
+  display: block;
+}
+
+/* ----- Media Query: PC (≥ 479px) ----- */
+@media screen and (min-width: 479px) {
   .br-pc {
     display: block;
   }
@@ -41,7 +103,6 @@ a:hover {
     display: none;
   }
 
-
   .htab {
     margin-left: 16px;
   }
@@ -50,21 +111,14 @@ a:hover {
     padding-right: 10px;
     padding-left: 30px;
     padding-top: 5px;
-    padding-bottom: 0px;
-    line-height: 1.3
+    padding-bottom: 0;
+    line-height: 1.3;
   }
 
   ol li {
-    padding-top: 0px;
+    padding-top: 0;
     padding-bottom: 7px;
   }
-
-
-  body {
-    width: 100%;
-    font-family: arial, sans-serif;
-  }
-
 
   figure1 {
     float: left;
@@ -74,7 +128,6 @@ a:hover {
 
   h1 {
     height: auto;
-    /* margin: 20px 0 0 10px; */
     padding: 0;
     text-align: left;
     color: #000;
@@ -84,13 +137,8 @@ a:hover {
     line-height: 1.5;
   }
 
-  .bg {
-    color: white;
-    clear: both;
-  }
-
   h2 {
-    margin: 30px 0 20px 0;
+    margin: 30px 0 20px;
     padding: 0 0 0 15px;
     font-size: 26px;
     font-weight: bold;
@@ -102,8 +150,6 @@ a:hover {
   article {
     margin: 30px 100px 50px 0;
     padding: 0 0 0 30px;
-    line-height: 1.4 font-size: 22px;
-
   }
 
   h3 {
@@ -111,7 +157,6 @@ a:hover {
     font-size: 22px;
     font-weight: bold;
     border-width: 0 0 1px 0;
-    /* border-style: solid; */
     border-color: #e6e6e6;
   }
 
@@ -121,17 +166,13 @@ a:hover {
     font-weight: 400;
     border-width: 0 0 1px 0;
     line-height: 20px;
-    /* border-style: solid; */
     border-color: #e6e6e6;
   }
-
-
 
   footer {
     height: auto;
     background-image: url("../../image/star.jpg");
-    /* margin: 40px 40px 10px 10px; */
-    margin: 0px 0px 0px 0px;
+    margin: 0;
     padding: 0 0 0 10px;
     color: #000;
     font-size: 15px;
@@ -142,8 +183,7 @@ a:hover {
   header {
     height: 130px;
     background-image: url("../../image/star.jpg");
-    /* margin: 10px 40px 10px 10px; */
-    margin: 0px 0px 0px 0px;
+    margin: 0;
     padding: 0 0 0 20px;
     color: #000;
     font-size: 15px;
@@ -157,63 +197,14 @@ a:hover {
     color: white;
   }
 
-
-
-
-  .tab-area {
-    display: flex;
-    justify-content: space-around;
-    background-color: #222e3e;
-    cursor: pointer;
-  }
-
-
-  .tab-area .tab {
-    font-size: 14pt;
-    width: 300px;
-    height: 40px;
-    line-height: 40px;
-    font-weight: 700;
-    text-align: center;
-    color: white;
-    border-right: 1px solid #50637b;
-    border-left: 1px solid #222e3e;
-  }
-
-  .tab-area .tab.active {
-    background-color: #ccc;
-    color: #222e3e;
-    border: none;
-
-  }
-
-  .content-area .content {
-    display: none;
-  }
-
+  /* Margin-top for content area on large screens */
   .content-area .content.show {
     margin-top: 50px;
-    display: block;
   }
-
-
 }
 
-
-
-
+/* ----- Media Query: Mobile (≤ 479px) ----- */
 @media screen and (max-width: 479px) {
-
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    width: 100%;
-    font-family: arial, sans-serif;
-  }
-
   .br-pc {
     display: none;
   }
@@ -226,7 +217,6 @@ a:hover {
     display: inline;
   }
 
-
   .htab {
     margin-left: 16px;
   }
@@ -235,18 +225,14 @@ a:hover {
     padding-right: 5px;
     padding-left: 20px;
     padding-top: 5px;
-    padding-bottom: 0px;
-    line-height: 1.3
+    padding-bottom: 0;
+    line-height: 1.3;
   }
 
   ol li {
-    padding-top: 0px;
+    padding-top: 0;
     padding-bottom: 7px;
   }
-
-
-
-
 
   figure1 {
     float: left;
@@ -266,13 +252,8 @@ a:hover {
     line-height: 1.5;
   }
 
-  .bg {
-    color: white;
-    clear: both;
-  }
-
   h2 {
-    margin: 40px 0 10px 0;
+    margin: 40px 0 10px;
     padding: 0 0 0 15px;
     font-size: 26px;
     font-weight: bold;
@@ -284,7 +265,6 @@ a:hover {
   article {
     margin: 30px 0 50px 0;
     padding: 0 5% 0 5%;
-
   }
 
   h3 {
@@ -292,7 +272,6 @@ a:hover {
     font-size: 18px;
     font-weight: bold;
     border-width: 0 0 1px 0;
-    /* border-style: solid; */
     border-color: #e6e6e6;
   }
 
@@ -302,16 +281,13 @@ a:hover {
     font-weight: 400;
     border-width: 0 0 1px 0;
     line-height: 20px;
-    /* border-style: solid; */
     border-color: #e6e6e6;
   }
-
 
   footer {
     height: auto;
     background-image: url("../../image/star.jpg");
-    /* margin: 40px 40px 10px 10px; */
-    margin: 0px 0px 0px 0px;
+    margin: 0;
     padding: 0 5% 0 5%;
     color: #000;
     font-size: 13px;
@@ -322,7 +298,6 @@ a:hover {
   header {
     height: 150px;
     background-image: url("../../image/star.jpg");
-    /* margin: 10px 40px 10px 10px; */
     padding: 0 5% 10px 5%;
     color: #000;
     font-size: 15px;
@@ -333,70 +308,12 @@ a:hover {
   .bg_foot {
     background-repeat: no-repeat;
     background-size: 100% 350%;
-    margin: 0px 15px 0px 15px;
+    margin: 0 15px;
     color: white;
   }
 
-
-  .tab-area {
-    display: flex;
-    justify-content: space-around;
-    background-color: #222e3e;
-    cursor: pointer;
-  }
-
-
-  .tab-area .tab {
-    font-size: 14pt;
-    width: 300px;
-    height: 40px;
-    line-height: 40px;
-    font-weight: 700;
-    text-align: center;
-    color: white;
-    border-right: 1px solid #50637b;
-    border-left: 1px solid #222e3e;
-  }
-
-  .tab-area .tab.active {
-    background-color: #ccc;
-    color: #222e3e;
-    border: none;
-
-  }
-
-  .content-area .content {
-    display: none;
-  }
-
+  /* Margin-top for content area on mobile */
   .content-area .content.show {
     margin-top: 25px;
-    display: block;
   }
 }
-
-
-
-
-
-figure2 {
-  float: center;
-  margin: 0% 0% 100% 0%;
-  ;
-  /* 「上」､「右」､「下」､「左」を指定 */
-  width: 100%;
-}
-
-h7 {
-  float: center;
-  /* padding-left: 30px; */
-  font-size: 18px;
-  line-height: 22px;
-  /* line-height: 20px; */
-  /* border-style: solid; */
-  border-color: #e6e6e6;
-}
-
-/* *{
-      outline: 2px red solid;
-  } */

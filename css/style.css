@@ -1,10 +1,70 @@
 @charset "utf-8";
 
+/* ----- Global Reset & Base Styles ----- */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  font-family: arial, sans-serif;
+}
+
 .noline {
   text-decoration: none;
   color: white;
 }
 
+.bg {
+  color: white;
+  clear: both;
+}
+
+.box img {
+  border-radius: 30px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ----- Common Tab & Content Area ----- */
+.tab-area {
+  display: flex;
+  justify-content: space-around;
+  background-color: #222e3e;
+  cursor: pointer;
+}
+
+.tab-area .tab {
+  font-size: 14pt;
+  width: 300px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  border-right: 1px solid #50637b;
+  border-left: 1px solid #222e3e;
+}
+
+.tab-area .tab.active {
+  background-color: #ccc;
+  color: #222e3e;
+  border: none;
+}
+
+.content-area .content {
+  display: none;
+}
+
+/* Display is shared, margin-top differs per media query */
+.content-area .content.show {
+  display: block;
+}
+
+/* ----- Elements Outside Media Queries ----- */
 h6 {
   padding-bottom: 7px;
   font-size: 18px;
@@ -12,22 +72,33 @@ h6 {
   border-width: 0 0 1px 0;
   line-height: 20px;
   margin-left: 0px;
-  /* border-style: solid; */
   border-color: #e6e6e6;
 }
 
-
-
-
-a:hover {
-  text-decoration: underline;
+h4 {
+  padding-bottom: 0;
+  padding-top: 0;
+  font-size: 17px;
+  line-height: 17px;
 }
 
+figure2 {
+  float: center;
+  margin: 0% 0% 100% 0%;
+  width: 100%;
+}
+
+h7 {
+  float: center;
+  font-size: 18px;
+  line-height: 22px;
+  border-color: #e6e6e6;
+}
+
+/* --------------------------------------------------
+   Media Query: PC (Screen width ≥ 479px)
+-------------------------------------------------- */
 @media screen and (min-width: 479px) {
-  * {
-    margin: 0;
-    padding: 0;
-  }
 
   .br-pc {
     display: block;
@@ -41,7 +112,6 @@ a:hover {
     display: none;
   }
 
-
   .htab {
     margin-left: 16px;
   }
@@ -50,27 +120,14 @@ a:hover {
     padding-right: 10px;
     padding-left: 30px;
     padding-top: 5px;
-    padding-bottom: 0px;
-    line-height: 1.3
+    padding-bottom: 0;
+    line-height: 1.3;
   }
 
   ol li {
-    padding-top: 0px;
+    padding-top: 0;
     padding-bottom: 7px;
   }
-
-
-  body {
-    width: 100%;
-    font-family: arial, sans-serif;
-  }
-
-  /* 
-  figure1 {
-    float: left;
-    margin: 0 15px 30px 0;
-    width: 180px;
-  } */
 
   figure1 {
     float: left;
@@ -80,7 +137,6 @@ a:hover {
 
   h1 {
     height: auto;
-    /* margin: 20px 0 0 10px; */
     padding: 0;
     text-align: left;
     color: #000;
@@ -88,11 +144,6 @@ a:hover {
     font-weight: bold;
     border-top: 0;
     line-height: 1.5;
-  }
-
-  .bg {
-    color: white;
-    clear: both;
   }
 
   h2 {
@@ -108,15 +159,13 @@ a:hover {
   article {
     margin: 30px 100px 50px 0;
     padding: 0 0 0 30px;
-
   }
 
   h3 {
-    padding-bottom: 10px;
+    padding-bottom: 7px;
     font-size: 22px;
     font-weight: bold;
     border-width: 0 0 1px 0;
-    /* border-style: solid; */
     border-color: #e6e6e6;
   }
 
@@ -126,17 +175,13 @@ a:hover {
     font-weight: 400;
     border-width: 0 0 1px 0;
     line-height: 20px;
-    /* border-style: solid; */
     border-color: #e6e6e6;
   }
-
-
 
   footer {
     height: auto;
     background-image: url("../image/star.jpg");
-    /* margin: 40px 40px 10px 10px; */
-    margin: 0px 0px 0px 0px;
+    margin: 0;
     padding: 0 0 0 10px;
     color: #000;
     font-size: 15px;
@@ -147,8 +192,7 @@ a:hover {
   header {
     height: 130px;
     background-image: url("../image/star.jpg");
-    /* margin: 10px 40px 10px 10px; */
-    margin: 0px 0px 0px 0px;
+    margin: 0;
     padding: 0 0 0 20px;
     color: #000;
     font-size: 15px;
@@ -162,85 +206,32 @@ a:hover {
     color: white;
   }
 
-
-
-
-  .tab-area {
-    display: flex;
-    justify-content: space-around;
-    background-color: #222e3e;
-    cursor: pointer;
-  }
-
-
-  .tab-area .tab {
-    font-size: 14pt;
-    width: 300px;
-    height: 40px;
-    line-height: 40px;
-    font-weight: 700;
-    text-align: center;
-    color: white;
-    border-right: 1px solid #50637b;
-    border-left: 1px solid #222e3e;
-  }
-
-  .tab-area .tab.active {
-    background-color: #ccc;
-    color: #222e3e;
-    border: none;
-
-  }
-
-  .content-area .content {
-    display: none;
-  }
-
+  /* Margin-top for large screens */
   .content-area .content.show {
     margin-top: 50px;
-    display: block;
   }
 
-  /* コンテナスタイル */
+  /* Horizontal container style for PC */
   .content {
     display: flex;
-    /* 横並びに配置 */
     align-items: flex-start;
-    /* 上揃え */
   }
 
-  /* 画像のスタイル */
   .content img {
     margin-right: 20px;
-    /* 画像とテキストの間の余白 */
     flex-shrink: 0;
-    /* 画像の縮小を防止 */
   }
 
-  /* テキストのスタイル */
   .content .text {
     flex: 1;
-    /* テキストが残りのスペースを占有 */
     max-width: 600px;
-    /* 必要に応じて最大幅を設定 */
   }
-
 }
 
-
-
-
+/* --------------------------------------------------
+   Media Query: Mobile (Screen width ≤ 479px)
+-------------------------------------------------- */
 @media screen and (max-width: 479px) {
-
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    width: 100%;
-    font-family: arial, sans-serif;
-  }
 
   .br-pc {
     display: none;
@@ -254,7 +245,6 @@ a:hover {
     display: inline;
   }
 
-
   .htab {
     margin-left: 16px;
   }
@@ -263,15 +253,14 @@ a:hover {
     padding-right: 5px;
     padding-left: 20px;
     padding-top: 5px;
-    padding-bottom: 0px;
-    line-height: 1.3
+    padding-bottom: 0;
+    line-height: 1.3;
   }
 
   ol li {
-    padding-top: 0px;
+    padding-top: 0;
     padding-bottom: 7px;
   }
-
 
   .special-section {
     display: flex;
@@ -285,22 +274,17 @@ a:hover {
 
   .special-section img {
     margin-right: 20px;
-    /* 画像とテキストの間の余白 */
   }
 
   .special-section .text {
     max-width: 400px;
-    /* テキスト部分の最大幅 */
   }
-
 
   figure1 {
     float: left;
     margin: 15% 15% 15% 15%;
     width: 100%;
   }
-
-
 
   h1 {
     height: auto;
@@ -312,11 +296,6 @@ a:hover {
     font-weight: bold;
     border-top: 0;
     line-height: 1.5;
-  }
-
-  .bg {
-    color: white;
-    clear: both;
   }
 
   h2 {
@@ -332,7 +311,6 @@ a:hover {
   article {
     margin: 30px 0 50px 0;
     padding: 0 5% 0 5%;
-
   }
 
   h3 {
@@ -340,7 +318,6 @@ a:hover {
     font-size: 18px;
     font-weight: bold;
     border-width: 0 0 1px 0;
-    /* border-style: solid; */
     border-color: #e6e6e6;
   }
 
@@ -350,16 +327,13 @@ a:hover {
     font-weight: 400;
     border-width: 0 0 1px 0;
     line-height: 20px;
-    /* border-style: solid; */
     border-color: #e6e6e6;
   }
-
 
   footer {
     height: auto;
     background-image: url("../image/star.jpg");
-    /* margin: 40px 40px 10px 10px; */
-    margin: 0px 0px 0px 0px;
+    margin: 0;
     padding: 0 5% 0 5%;
     color: #000;
     font-size: 13px;
@@ -370,7 +344,6 @@ a:hover {
   header {
     height: 150px;
     background-image: url("../image/star.jpg");
-    /* margin: 10px 40px 10px 10px; */
     padding: 0 5% 10px 5%;
     color: #000;
     font-size: 15px;
@@ -381,70 +354,12 @@ a:hover {
   .bg_foot {
     background-repeat: no-repeat;
     background-size: 100% 350%;
-    margin: 0px 15px 0px 15px;
+    margin: 0 15px;
     color: white;
   }
 
-
-  .tab-area {
-    display: flex;
-    justify-content: space-around;
-    background-color: #222e3e;
-    cursor: pointer;
-  }
-
-
-  .tab-area .tab {
-    font-size: 14pt;
-    width: 300px;
-    height: 40px;
-    line-height: 40px;
-    font-weight: 700;
-    text-align: center;
-    color: white;
-    border-right: 1px solid #50637b;
-    border-left: 1px solid #222e3e;
-  }
-
-  .tab-area .tab.active {
-    background-color: #ccc;
-    color: #222e3e;
-    border: none;
-
-  }
-
-  .content-area .content {
-    display: none;
-  }
-
+  /* Margin-top for mobile */
   .content-area .content.show {
     margin-top: 25px;
-    display: block;
   }
 }
-
-
-
-
-
-figure2 {
-  float: center;
-  margin: 0% 0% 100% 0%;
-  ;
-  /* 「上」､「右」､「下」､「左」を指定 */
-  width: 100%;
-}
-
-h7 {
-  float: center;
-  /* padding-left: 30px; */
-  font-size: 18px;
-  line-height: 22px;
-  /* line-height: 20px; */
-  /* border-style: solid; */
-  border-color: #e6e6e6;
-}
-
-/* *{
-      outline: 2px red solid;
-  } */
