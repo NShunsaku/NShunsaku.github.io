@@ -160,6 +160,13 @@ h6 {
     border-color: #e6e6e6;
   }
 
+  h4 {
+    padding-bottom: 0;
+    padding-top: 0;
+    font-size: 17px;
+    line-height: 17px;
+  }
+
   h5 {
     padding-bottom: 7px;
     font-size: 18px;
