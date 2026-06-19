@@ -192,6 +192,15 @@ h7 {
     line-height: 1.5;
   }
 
+  h5 {
+    padding-bottom: 7px;
+    font-size: 16px;
+    font-weight: 400;
+    border-width: 0 0 1px 0;
+    line-height: 20px;
+    border-color: #e6e6e6;
+  }
+
   .bg_foot {
     background-repeat: no-repeat;
     background-size: 100% 350%;
